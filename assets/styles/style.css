@@ -41,7 +41,7 @@ body {
     transform: translateX(-50%) !important;
 }
 
-.alignAbsoluteItens {
+.alignAbsoluteItems {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) !important;
@@ -82,6 +82,15 @@ body {
     transition: all 500ms ease;
 }
 
+.pause-resume {
+    display: none;
+    place-items: center;
+    background-color: var(--orange);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
 .ctaButton,
 .module,
 .bonusItem {
@@ -94,6 +103,156 @@ body {
 .ctaButton:hover {
     transform: scale(1.1);
     box-shadow: 0 0 20px var(--orange);
+}
+
+.fbComments {
+    padding: 5% 0 2% 0;
+}
+
+.fbComments .containerContent {
+    width: 90%;
+    font-family: "Roboto", Sans-serif;
+}
+
+.fbComments .quantityOfComments {
+    position: relative;
+}
+
+.fbComments .quantityOfComments::after,
+.fbComments .comments::after {
+    content: '';
+    position: absolute;
+    background-color: #cccccc;
+    width: 100%;
+    height: 1px;
+}
+
+.fbComments .quantityOfComments::after {
+    top: 150%;
+}
+
+.fbComments .quantityOfComments p {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.fbComments .comments {
+    position: relative;
+}
+
+
+.fbComments .comments .profiles {
+    list-style: none;
+    margin-top: 5%;
+}
+
+.fbComments .comments .profiles li {
+    margin-bottom: 1rem;
+}
+
+.fbComments .comments .profiles li .alignDivs {
+    display: flex; 
+    gap: 1rem;
+}
+
+.fbComments .comments .profiles li.response {
+    position: relative;
+    left: 5%;
+}
+
+.fbComments .comments .profiles li.response::after {
+    content: '';
+    position: absolute;
+    width: 10%;
+    height: 1px;
+    background-color: #cccccc;
+    top: 40%;
+    transform: rotate(90deg) translateY(-50%);
+    left: -8%;
+}
+
+.fbComments .comments .profiles li .profileImg {
+    width: fit-content;
+}
+
+.fbComments .comments .profiles li .profileImg img {
+    width: auto;
+    height: 43px;
+    border-radius: 50%;
+}
+
+.fbComments .comments .profiles li .profileTexts {
+    background-color: #e4e4e467;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.fbComments .comments .profiles li .profileTexts h4 {
+    font-size: 0.9rem;
+    color: #365899;
+}
+
+.fbComments .comments .profiles li .profileTexts span {
+    color: #365899;
+}
+
+.fbComments .comments .profiles li .profileTexts p {
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0 !important;
+}
+
+.profileTexts .curtidas {
+    right: 2%;
+    width: 5rem;
+    background-color: #fafafa;
+    box-shadow: 0 5px 5px rgba(158, 158, 158, 0.356);
+    border-radius: 15px;
+    padding: 0 0.3rem;
+}
+
+.profileTexts .curtidas img:first-child {
+    width: 28%;
+}
+
+.profileTexts .curtidas img {
+    width: 33%;
+}
+
+.fbComments .comments .profiles li .interaction {
+    display: flex;
+    gap: 0.3rem;
+    color: #9F9F9F;
+    margin-top: 0.8rem;
+}
+
+.fbComments .comments .profiles li .interaction span,
+.fbComments .comments .profiles li .interaction p {
+    font-size: 0.75rem;
+}
+
+.fbComments .comments .profiles li .interaction p {
+    font-weight: 600;
+    color: #797979;
+}
+
+.fbComments .complement {
+    display: flex;
+    gap: 1rem;
+    padding-top: 0.5rem;
+    margin-bottom: 4.5rem;
+}
+
+.fbComments .complement p {
+    color:  #545454;
+    font-size: 0.9rem;
+    align-self: flex-end;
+}
+
+.fbComments .complement i {
+    color: #3B5988;
+    font-size: 1.4rem;
 }
 
 .bonusItem {
@@ -118,6 +277,17 @@ body {
 
 .esconder {
     display: none !important;
+}
+
+@media(max-width: 600px) {
+    .pause-resume {
+        width: 75px;
+        height: 75px;
+    }
+
+    .pause-resume img {
+        width: 60%;
+    }
 }
 
 @media (max-width: 360px) {
@@ -254,4 +424,53 @@ body {
    .offer .textContent .paymentOptions {
     width: 60% !important;
    }
+}
+
+@media (max-width: 600px) {
+    .referrals img {
+      width: 100% !important;
+    }
+
+    .profiles,
+    .fbComments .container {
+        padding: 0 !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 850px) {
+    .fbComments .comments .profiles li.response::after {
+        width: 10% !important;
+        left: -9% !important;
+        top: 25% !important;
+    }
+}
+
+@media (max-width:  850px) {
+    .fbComments {
+        padding: 0.8rem;
+    }
+
+    .fbComments .comments .profiles li .profileTexts p {
+        line-height: 1.5;
+    }
+
+    .fbComments .comments .profiles li.response::after {
+        width: 20%;
+        left: -15%;
+        top: 20%;
+    }
+
+    .fbComments .complement {
+        margin: 3rem 0 0.5rem 0;
+        gap: 0.3rem;
+    }
+
+    .fbComments .complement i {
+        font-size: 1.1rem;
+    }
+
+    .fbComments .complement p {
+        font-size: 0.75rem;
+    }
+    
 }

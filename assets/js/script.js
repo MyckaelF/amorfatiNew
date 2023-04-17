@@ -36,10 +36,50 @@ const video = document.getElementById('video')
 const controlVideo = document.getElementById('controlVideo')
 const progressBar = document.getElementById('progressBar')
 const progressBarControl = document.querySelector('.progress')
+const pauseButton = document.getElementById('pause')
+const playButton = document.getElementById('play')
 
 video.muted = true
 
-controlVideo.onclick = () => {
+video.onclick = controlPlayAndPause
+
+function controlPlayAndPause () {
+    if(video.muted) {
+        return
+    }
+
+    if(!video.paused) {
+        video.pause()
+        changeDisplay(pauseButton, playButton)
+    } else {
+        video.play()
+        changeDisplay(playButton, pauseButton)
+        removeButtons (playButton)
+    }
+}
+
+pauseButton.onclick = () => {
+    video.play()
+    removeButtons (pauseButton)
+}
+
+function removeButtons (button) {
+    setTimeout(() => {
+        button.style.display = 'none'
+    }, 1000)
+}
+
+function changeDisplay(buttonToDisplay, buttonToHidden) {
+    buttonToDisplay.style.display = 'grid'
+    buttonToHidden.style.display = 'none'
+}
+
+controlVideo.onclick =  manipulateBar
+
+
+function manipulateBar(e) {
+
+
     progressBarControl.classList.remove('invisible')
     video.currentTime = 0
     video.muted = false
@@ -47,11 +87,24 @@ controlVideo.onclick = () => {
     
     video.onended = () => {
         progressBar.style.width = "100%"
+        video.removeEventListener('click', controlPlayAndPause)
     }
     
+    bar()
+}
+
+function bar() {
+
     let counter = 0
+
     const barSizing = setInterval(() => {
+
+        if(video.paused) {
+            return
+        }
+        
         progressBar.style.width = counter + "%"
+
 
         if(progressBar.style.width === '50%') {
             clearInterval(barSizing)
@@ -60,7 +113,7 @@ controlVideo.onclick = () => {
         }
 
         counter++
-    }, 500);
+    }, 500)
 }
 
 function getTimeOfVideo (counter) {

@@ -63,19 +63,26 @@
                         <div class="position-relative">
                             <video id="video" src="assets/video/videoNietzsche.MP4" autoplay muted playsinline class="w-100 position-relative video-player">
                             </video>
-                            <div id="controlVideo" class="controlVideo position-absolute zIndex alignAbsoluteItens backgroundOrange p-2 rounded text-center">
+                            <div id="controlVideo" class="controlVideo position-absolute zIndex alignAbsoluteItems backgroundOrange p-2 rounded text-center">
                                 <p class="fs-6 text-light">O vídeo começou</p>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-50" fill="#fff" class="bi bi-volume-mute-fill" viewBox="0 0 16 16">
                                     <path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06zm7.137 2.096a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0z"/>
                                 </svg>
                                 <p class="fs-6 text-light ">Clique aqui para ouvir</p>
                             </div>
+                            <div id="pause" class="pause-resume position-absolute zIndex alignAbsoluteItems">
+                                <img src="assets/images/pausa.png" alt="Botão de pausa">
+                            </div>
+                            <div id="play" class="pause-resume position-absolute zIndex alignAbsoluteItems">
+                                <img src="assets/images/botao-play.png" alt="Botão de pausa">
+                            </div>
                             <div class="progress position-absolute zIndex progBar start-50 alignAbsoluteXItens invisible" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
                                 <div id="progressBar" class="progress-bar backgroundOrange progress-bar-striped" style="width: 0%"></div>
                             </div>
                         </div>
                     </div>
-            <a href="https://pay.kiwify.com.br/SyDy7XF" target="_blank" class="text-decoration-none text-center p-3 rounded w-100 mt-5 text-light fw-bold backgroundOrange ctaButton esconder">Eu quero descobrir o segredo agora!</a>
+                    <h5 class="text-center text-light" id="contageText"><span class="textOrange" id="contage">100</span> Pessoas assistindo no momento</h5>
+                    <a href="https://pay.kiwify.com.br/SyDy7XF" target="_blank" class="text-decoration-none text-center p-3 rounded w-100 mt-5 text-light fw-bold backgroundOrange ctaButton ">Eu quero descobrir o segredo agora!</a>
 
                 </div>
                 <div class="textContent d-flex flex-column justify-content-between w-100 zIndex">
@@ -89,11 +96,217 @@
             
         </section>
 
-        <section class="bonus bg-dark p-sm-5 esconder">
-            <div class="title py-5 m-auto">
+        <section class="fbComments">
+            <!-- Esse container aqui é onde você pode editar os comentários do facebook, os que tem class="response" são as respostas de outro comentário -->
+            <div class="container">
+                <div class="containerContent m-auto">
+                    <div class="quantityOfComments fw-bold">
+                        <p class="fw-bold">Mostrando 7 comentarios</p>
+                    </div>
+
+                    <div class="comments">
+                        <ul class="profiles">  
+                            <li>
+                                <div class="alignDivs">
+                                    <!-- Aqui você altera a foto do perfil do facebook -->
+                                    <div class="profileImg">
+                                        <img src="assets/images/depoimento (4).jpg" alt="profile photo">
+                                    </div>
+                                    <!-- Aqui você altera os textos do perfil do facebook -->
+                                    <div class="profileTexts position-relative">
+                                        <h4 class="fw-semibold">Gabriel Pereira</h4>
+                                        <p>
+                                            Eu adorei este e-book! Ele me ensinou a valorizar mais a vida e a encontrar significado em todas as experiências. Recomendo muito!
+                                        </p>
+                                        <div class="curtidas position-absolute">
+                                            <img src="assets/images/facebook-like.svg" alt="Like facebook">
+                                            <img src="assets/images/heart-circle-svgrepo-com.svg" alt="Heart facebook">
+                                            <p class="text-secondary-emphasis m-0 d-inline">32</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="interaction">
+                                    <span>8 min</span>
+                                    <p class="fw-bold">Curtir</p>
+                                    <p>Responder</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="alignDivs">
+                                    <div class="profileImg">
+                                        <img src="assets/images/depoimento (1).jpg" alt="profile photo">
+                                    </div>
+                                    <div class="profileTexts">
+                                        <h4 class="fw-semibold">Pedro Costa</h4>
+                                        <p>
+                                            Vale a pena ler este ebook sobre amor fati? Ele é fácil de entender?
+                                        </p>
+                                        <div class="curtidas position-absolute">
+                                            <img src="assets/images/facebook-like.svg" alt="Like facebook">
+                                            <img src="assets/images/heart-circle-svgrepo-com.svg" alt="Heart facebook">
+                                            <p class="text-secondary-emphasis m-0 d-inline">57</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="interaction">
+                                    <span>11 min</span>
+                                    <p class="fw-bold">Curtir</p>
+                                    <p>Responder</p>
+                                </div>
+                            </li>
+                            <li class="response">
+                                <div class="alignDivs">
+                                    <div class="profileImg">
+                                        <img src="assets/images/depoimento (3).jpg"alt="profile photo">
+                                    </div>
+                                    <div class="profileTexts">
+                                        <h4 class="fw-semibold">Rafaela Oliveira</h4>
+                                        <p>
+                                            Sim, eu recomendo muito a leitura deste ebook sobre amor fati. Ele é fácil de entender e oferece muitas ideias úteis para aplicar na vida cotidiana.
+                                        </p>
+                                        <div class="curtidas position-absolute">
+                                            <img src="assets/images/facebook-like.svg" alt="Like facebook">
+                                            <img src="assets/images/heart-circle-svgrepo-com.svg" alt="Heart facebook">
+                                            <p class="text-secondary-emphasis m-0 d-inline">41</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="interaction">
+                                    <span>2 min</span>
+                                    <p class="fw-bold">Curtir</p>
+                                    <p>Responder</p>
+                                </div>
+                            </li>
+                            <li class="response">
+                                <div class="alignDivs">
+                                    <div class="profileImg">
+                                        <img src="assets/images/depoimento (1).jpg" alt="profile photo">
+                                    </div>
+                                    <div class="profileTexts">
+                                        <h4 class="fw-semibold">Pedro Costa</h4>
+                                        <p>
+                                            Obrigado Rafaela! Vou comprar o meu tb 😁
+                                        </p>
+                                        <div class="curtidas position-absolute">
+                                            <img src="assets/images/facebook-like.svg" alt="Like facebook">
+                                            <img src="assets/images/heart-circle-svgrepo-com.svg" alt="Heart facebook">
+                                            <p class="text-secondary-emphasis m-0 d-inline">23</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="interaction">
+                                    <span>1 min</span>
+                                    <p class="fw-bold">Curtir</p>
+                                    <p>Responder</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="alignDivs">
+                                    <div class="profileImg">
+                                        <img src="assets/images/depoimento (6).jpg" alt="profile photo">
+                                    </div>
+                                    <div class="profileTexts">
+                                        <h4 class="fw-semibold">Marcelo Santos</h4>
+                                        <p>
+                                            O amor fati é uma filosofia muito interessante e este ebook explica de maneira clara e direta. Aprendi muito lendo.
+                                        </p>
+                                        <div class="curtidas position-absolute">
+                                            <img src="assets/images/facebook-like.svg" alt="Like facebook">
+                                            <img src="assets/images/heart-circle-svgrepo-com.svg" alt="Heart facebook">
+                                            <p class="text-secondary-emphasis m-0 d-inline">35</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="interaction">
+                                    <span>15 min</span>
+                                    <p class="fw-bold">Curtir</p>
+                                    <p>Responder</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="alignDivs">
+                                    <div class="profileImg">
+                                        <img src="assets/images/depoimento (2).jpg" alt="profile photo">
+                                    </div>
+                                    <div class="profileTexts">
+                                        <h4 class="fw-semibold">Ana Souza</h4>
+                                        <p>
+                                            É possível entender a filosofia do amor fati lendo apenas este ebook? Ou é necessário ter um conhecimento prévio?
+                                        </p>
+                                        <div class="curtidas position-absolute">
+                                            <img src="assets/images/facebook-like.svg" alt="Like facebook">
+                                            <img src="assets/images/heart-circle-svgrepo-com.svg" alt="Heart facebook">
+                                            <p class="text-secondary-emphasis m-0 d-inline">83</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="interaction">
+                                    <span>9 min</span>
+                                    <p class="fw-bold">Curtir</p>
+                                    <p>Responder</p>
+                                </div>
+                            </li>
+                            <li class="response">
+                                <div class="alignDivs">
+                                    <div class="profileImg">
+                                        <img src="assets/images/depoimento (5).jpg" alt="profile photo">
+                                    </div>
+                                    <div class="profileTexts">
+                                        <h4 class="fw-semibold">João da Silva</h4>
+                                        <p>
+                                            Não é precisa ter um conhecimento prévio sobre a filosofia do amor fati para entender o conteúdo. Ele é uma ótima introdução à filosofia e oferece muitas ideias úteis para aplicar na vida cotidiana.
+                                        </p>
+                                        <div class="curtidas position-absolute">
+                                            <img src="assets/images/facebook-like.svg" alt="Like facebook">
+                                            <img src="assets/images/heart-circle-svgrepo-com.svg" alt="Heart facebook">
+                                            <p class="text-secondary-emphasis m-0 d-inline">14</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="interaction">
+                                    <span>6 min</span>
+                                    <p class="fw-bold">Curtir</p>
+                                    <p>Responder</p>
+                                </div>
+                            </li>
+                            <li class="response">
+                                <div class="alignDivs">
+                                    <div class="profileImg">
+                                        <img src="assets/images/depoimento (2).jpg" alt="profile photo">
+                                    </div>
+                                    <div class="profileTexts">
+                                        <h4 class="fw-semibold">Ana Souza</h4>
+                                        <p>
+                                            Obrigado por tirar a minha dúvida! Vou comprar o meu agora.
+                                        </p>
+                                        <div class="curtidas position-absolute">
+                                            <img src="assets/images/facebook-like.svg" alt="Like facebook">
+                                            <img src="assets/images/heart-circle-svgrepo-com.svg" alt="Heart facebook">
+                                            <p class="text-secondary-emphasis m-0 d-inline">8</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="interaction">
+                                    <span>4 min</span>
+                                    <p class="fw-bold">Curtir</p>
+                                    <p>Responder</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="complement justify-content-center">
+                        <p>Você precisa estar logado para comentar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bonus bg-dark p-sm-5 ">
+            <div class="title py-1 m-auto">
                 <h2 class="textOrange text-center bg-dark rounded-4 py-4">Adquira agora e leve esses bônus exclusivos</h2>
             </div>
-            <div class="container p-5">
+            <div class="container p-2">
                 <div class="bonusItem p-4 mb-5 rounded-4 w-75 m-auto d-flex">
                     <div class="image w-25 m-auto text-center">
                         <svg xmlns="http://www.w3.org/2000/svg"  class="w-75" fill="#d26d3f" class="bi bi-book" viewBox="0 0 16 16">
@@ -122,7 +335,7 @@
             <a href="#offer" class="d-block text-decoration-none text-center p-3 rounded w-50 m-auto mt-5 text-light fw-bold backgroundOrange ctaButton text-uppercase">quero agora!</a>
         </section>
 
-        <section class="offer bg-dark esconder">
+        <section class="offer bg-dark ">
             <div class="title text-center bg-black p-5">
                 <h2 class="textOrange">Não perca essa oportunidade</h2>
             </div>
@@ -153,7 +366,7 @@
             </div>
         </section>
 
-        <section class="warranty py-5 bg-light esconder">
+        <section class="warranty py-5 bg-light ">
             <div class="container d-flex align-items-center">
                 <div class="image w-50 text-center">
                     <img src="assets/images/seloGarantia.png" alt="selo de garantia" class="w-50">
@@ -174,16 +387,19 @@
     </main>
 
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/contage.js"></script>
     <script>
 
         const items = document.querySelectorAll('.esconder')
         const homeHeight = document.querySelector('.videoSectionHeight')
+        const contageText = document.getElementById('contageText')
         const segundos = 210
 
         setTimeout(()=> {
             items.forEach((item)=> {
             item.classList.remove('esconder')
             homeHeight.classList.remove('videoSectionHeight')
+            contageText.classList.add('esconder')
         })
         }, segundos * 1000)
     </script>
